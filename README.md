@@ -1,4 +1,4 @@
-# TelecomAI — Churn Prediction & Customer Management
+# Telecom AI Churn Prediction & Customer Management
 
 A full-stack telecom web app with AI-powered churn prediction, a customer chatbot,
 multi-language support, and an admin analytics dashboard.
@@ -11,21 +11,21 @@ multi-language support, and an admin analytics dashboard.
 | Backend | FastAPI (Python) + SQLAlchemy ORM |
 | Database | PostgreSQL (async via asyncpg) |
 | ML model | XGBoost churn classifier |
-| AI / Chat | Groq API (Llama 3.1) |
+| Chatbot | Groq API (Llama 3.1) |
 
 ## What is included
 
-- `src/` — React TypeScript frontend (pages, components, cart, admin dashboard)
-- `backend/` — FastAPI backend (auth, ML prediction, AI chat, contact, analytics)
-- `examples/` — Simplified runnable examples for onboarding without private files
-- `docs/` — Architecture, ML pipeline, security, and user guide notes
-- `.env.example` — Safe environment template (copy to `.env` and fill in your values)
+- `src/` React TypeScript frontend (pages, components, cart, admin dashboard)
+- `backend/` FastAPI backend (auth, ML prediction, AI chat, contact, analytics)
+- `examples/` Simplified runnable examples for onboarding without private files
+- `docs/` Architecture, ML pipeline, security, and user guide notes
+- `.env.example` Safe environment template (copy to `.env` and fill in your values)
 
 ## What is intentionally not included
 
 The repository excludes local/private files such as:
 
-- `.env` — your real API keys and database credentials
+- `.env` your real API keys and database credentials
 - Python virtual environments and `node_modules`
 - Training datasets (CSV files)
 - Trained model artifacts (`best_model_xgboost.pkl`, `feature_stats.json`)
@@ -65,7 +65,7 @@ The backend starts on `http://127.0.0.1:8001`. Interactive docs at `/docs`.
 
 ## Training your own model
 
-See `examples/train_example.py` — bring your own churn CSV, configure the
+See `examples/train_example.py` bring your own churn CSV, configure the
 column mapping, and run the script. The trained model is saved into `backend/`
 and loaded automatically on the next server start.
 
@@ -74,7 +74,7 @@ see [SOURCES.md](SOURCES.md).
 
 ## Seeding demo users
 
-See `examples/seed_example.py` — configures and inserts admin, agent, and
+See `examples/seed_example.py` configures and inserts admin, agent, and
 customer accounts into your database. Credentials are read from `.env`.
 
 ## Examples (no private files needed)
