@@ -1,0 +1,37 @@
+# Security & Authentication Deep Dive
+
+Security is a critical requirement for any enterprise application. YahyaTel v2 implements a modern JWT authentication system.
+
+## Authentication Flow
+
+### 1. User Login
+When a user submits their credentials:
+1.  **Password Hashing**: The backend retrieves the stored password hash from PostgreSQL. We use `bcrypt` for hashing, which is resistant to rainbow table attacks.
+2.  **Comparison**: `bcrypt.checkpw()` compares the input password against the salt and hash.
+3.  **Token Generation**: Upon success, a **JWT (JSON Web Token)** is created using the `HS256` algorithm.
+
+### 2. The Token Structure
+A JWT consists of three parts separated by dots:
+*   **Header**: Specifies the algorithm.
+*   **Payload**: Contains "claims" like the user's email (`sub`), their role (`customer`, `admin`), and the expiration time (`exp`).
+*   **Signature**: A cryptographic hash of the first two parts using our `SECRET_KEY`. This prevents anyone from tampering with their role or email in the token.
+
+## Role Based Access Control
+
+We use FastAPI Dependencies to protect our endpoints.
+
+### 1. The `@Depends` Pattern
+In `backend/main.py`, we define reusable security checks:
+python
+def admin_required(current_user = Depends(get_current_user)):
+    if current_user["role"] not in ["admin", "customer_agent"]:
+        raise HTTPException(status_code=403, detail="Not enough permissions")
+
+### 2. Protected Endpoints
+*   predict: Requires `get_current_user`. You must be logged in to use the AI Brain.
+*   api/chatlogs: Requires `admin_required`. Only staff can see customer conversation history.
+*   api/stats: Requires `admin_required`. Only staff can see the system performance metrics.
+
+## Database Security
+*   SQLAlchemy ORM: Prevents SQL Injection attacks by using parameterized queries automatically.
+*   Environment Variables: Sensitive info like SECRET_KEY and DATABASE_URL are never hardcoded; they are loaded from a .env file through Docker.

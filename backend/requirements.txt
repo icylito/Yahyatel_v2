@@ -1,0 +1,24 @@
+# Web framework
+fastapi
+uvicorn
+
+# ML / data (runtime model inference)
+pandas
+xgboost
+joblib
+
+# HTTP & validation
+httpx
+pydantic
+python-dotenv
+
+# Auth
+bcrypt
+python-jose[cryptography]
+
+# Database (PostgreSQL async)
+sqlalchemy
+asyncpg
+
+# Training only (not needed at runtime)
+# scikit-learn

@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+  --primary: 221 83% 53%;
+  --primary-foreground: 210 20% 98%;
+  --secondary: 210 20% 96%;
+  --secondary-foreground: 222 47% 11%;
+  --muted: 210 20% 96%;
+  --muted-foreground: 215 16% 47%;
+  --accent: 210 100% 97%;
+  --accent-foreground: 221 83% 53%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 20% 98%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 221 83% 53%;
+  --radius: 0.375rem;
+  /* Reduced from 0.5rem */
+
+  /* YahyaTel Brand palette refined */
+  --brand-50: 210 100% 97%;
+  --brand-100: 210 100% 90%;
+  --brand-200: 210 100% 80%;
+  --brand-300: 210 100% 70%;
+  --brand-400: 210 100% 60%;
+  --brand-500: 210 100% 50%;
+  --brand-600: 221 83% 53%;
+  --brand-700: 217 91% 35%;
+  --brand-800: 222 47% 11%;
+  --brand-900: 222 47% 6%;
+}
+
+html {
+  font-size: 14px;
+  /* Default shrink */
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+  }
+}
+
+@layer utilities {
+  .hero-gradient {
+    background: #0b2744;
+    background: linear-gradient(135deg, #0b2744 0%, #012a61 50%, #0b2744 100%) !important;
+  }
+
+  .brand-gradient {
+    @apply bg-gradient-to-r from-[hsl(var(--brand-600))] to-[hsl(var(--brand-700))];
+  }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.5); }
+  to   { opacity: 1; transform: scale(1); }
+}

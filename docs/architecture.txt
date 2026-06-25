@@ -1,0 +1,36 @@
+# System Architecture
+
+YahyaTel v2 uses a full-stack architecture with a React frontend, FastAPI backend, database layer, AI proxy, and churn prediction.
+
+## High-Level Architecture Diagram
+
+```mermaid
+graph TD
+    User((User/Admin)) -->|React + Vite| FE[Frontend]
+    FE -->|API Calls / JWT| BE[FastAPI Backend]
+    BE -->|Async Queries| DB[(Database)]
+    BE -->|Inference| ML[XGBoost Artifacts or Demo Fallback]
+    BE -->|External API| Groq[Groq AI / LLM]
+```
+
+## The Layers
+
+### 1. Presentation Layer
+
+- React with TypeScript.
+- React state and context for authentication and cart workflows.
+- Tailwind CSS for styling.
+- Vite for local development and frontend builds.
+
+### 2. Logic Layer
+
+- FastAPI provides backend routes and automatic OpenAPI documentation.
+- Async database calls keep the server responsive.
+- The AI proxy keeps API keys server-side and injects YahyaTel rules.
+
+### 3. Data and Intelligence Layer
+
+- The database stores users, chat logs, contact messages, and service data.
+- SQLAlchemy handles database access.
+- If private XGBoost artifacts exist locally, they are loaded on startup.
+- If model artifacts are missing, the public demo estimator keeps prediction routes usable.

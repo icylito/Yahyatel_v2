@@ -1,0 +1,92 @@
+# Dependencies and build output
+node_modules/
+dist/
+dist-ssr/
+build/
+
+# Logs and temporary files
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.tmp
+*.temp
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# Python environments and caches
+.venv/
+.venv_stable/
+.venv_stable/**
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Local datasets and generated ML artifacts
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.jsonl
+*.parquet
+cell2celltrain.csv
+churn-bigml-20.csv
+telecom_customer_churn.csv
+WA_Fn-UseC_-Telco-Customer-Churn.csv
+*.pkl
+*.pkl.bak
+backend/feature_stats.json
+backend/feature_stats.json.bak
+backend/label_encoders.json
+backend/training_stats.log
+backend/pip_install.log
+
+# Local scripts and deployment files not needed for public usage
+*.bat
+activate.bat
+deactivate.bat
+check_backend.bat
+check_db.bat
+check_frontend.bat
+check_login2.bat
+kill_port8001.bat
+restart_backend.bat
+run_seed.bat
+Dockerfile
+**/Dockerfile
+docker-compose*.yml
+.dockerignore
+nginx.conf
+railway.toml
+
+# Private utility scripts — local only, not for public repo
+seed_users.py
+reset_and_seed.py
+verify_apis_detailed.py
+report.md
+backend/train_gcp_vertex.py
+
+# Agent metadata
+.agents/
+
+# IDE and OS files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+.DS_Store
+desktop.ini
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.zip

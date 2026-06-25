@@ -1,0 +1,40 @@
+# Machine Learning & AI Deep Dive
+
+This document explains the customer churn prediction flow and the AI assistant.
+
+## Customer Churn Prediction
+
+YahyaTel predicts whether a customer is likely to leave the service.
+
+### Private XGBoost Model
+
+The local project can use an XGBoost model trained from telecom churn datasets. The generated artifacts, such as `backend/best_model_xgboost.pkl` and `backend/feature_stats.json`, are intentionally ignored by Git because they are local/private files.
+
+### Public Demo Fallback
+
+When the private model artifacts are missing, the backend uses a small deterministic fallback estimator. This keeps the public GitHub version runnable without shipping private datasets or model files.
+
+### Training Pipeline
+
+The training script maps different telecom datasets into a shared churn feature format, fills missing values, encodes categorical values, trains the model, and saves the local artifacts used by the backend.
+
+Code references:
+
+- `backend/main.py` loads the model artifacts and handles fallback prediction.
+- `backend/train_gcp_vertex.py` contains the local training pipeline.
+
+## Intelligent AI Assistant
+
+The chatbot is a domain-specific YahyaTel assistant.
+
+### Prompt Engineering
+
+The backend injects a system prompt that binds the assistant to YahyaTel services, pricing, support, and safety rules.
+
+### Technical Flow
+
+1. User input starts in the React frontend.
+2. FastAPI receives the request at `/api/chat`.
+3. The backend adds YahyaTel business context.
+4. The request is forwarded to the configured Groq model.
+5. The optional translation endpoint returns JSON-formatted translations.

@@ -1,0 +1,40 @@
+# User Guide (Surface Level)
+
+Welcome to the YahyaTel v2 Customer Portal! This guide explains how to use the platform's features without getting bogged down in the technical jargon.
+
+## Getting Started
+
+1.  Create an Account: Use the registration page to join. You can choose to be a standard Customer or a Customer Agent (for administrative testing).
+2.  Dashboard: Once logged in, your dashboard shows your active services and a snapshot of your account health.
+
+---
+
+## 🔮 AI Churn Prediction (The "Health Check")
+
+What is it? 
+Churn is a business term for when a customer stops using a service. Our AI analyzes your usage patterns to tell us how likely you are to stay with YahyaTel.
+
+How to use it:
+*   Navigate to the AI Analyzer tab.
+*   Fill in details about your plan (tenure, internet type, billing method).
+*   Click Predict.
+*   The AI will return a percentage. Higher percentages mean the customer is at risk of leaving, allowing our team to offer better deals!
+
+---
+
+## Smart AI Assistant
+
+Found in the bottom-right corner of the screen, the AI Assistant is available 24/7.
+
+*   Ask about Plans: You can ask "What are the mobile plans?" and it will give you accurate prices in OMR.
+*   Multilingual: The assistant can translate between English and Arabic seamlessly.
+*   Account Help: It can guide you on how to upgrade your internet or add business solutions.
+
+---
+
+## Admin Features (For Staff)
+
+If you are logged in as an Admin or Customer Agent:
+*   Monitor Logs: You can see a live feed of all customer interactions with the AI.
+*   System Stats: View the total number of users and active subscriptions on the network.
+*   Manage Services: Update the available plans and offerings.
