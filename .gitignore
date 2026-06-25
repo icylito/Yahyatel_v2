@@ -77,6 +77,9 @@ backend/train_gcp_vertex.py
 # Agent metadata
 .agents/
 
+# Private assets
+src/pics/
+
 # IDE and OS files
 .vscode/*
 !.vscode/extensions.json
@@ -90,3 +93,7 @@ desktop.ini
 *.sln
 *.sw?
 *.zip
+
+#pics
+logo.png
+logo1.pg
