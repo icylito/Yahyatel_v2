@@ -1,7 +1,13 @@
+# YahyaTel
+Churn prediction and customer retention platform for telecom companies.
+Presented at ICBCT 2026 — 3rd International Conference on Business, Computing and Technology.
 # Telecom AI Churn Prediction & Customer Management
 
 A full-stack telecom web app with AI-powered churn prediction, a customer chatbot,
 multi-language support, and an admin analytics dashboard.
+
+<img width="1913" height="914" alt="image" src="https://github.com/user-attachments/assets/38c138e6-b7ba-4530-82f9-b8c9fac7756e" />
+
 
 ## Tech stack
 
